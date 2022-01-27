@@ -7,6 +7,7 @@ def buildImage() {
     echo "building the docker image..."
     withCredentials([usernamePassword(credentialsId: 'DOCKER_CREDENTIALS', passwordVariable: 'PASSWORD', usernameVariable: 'USERNAME')]) {
         sh 'docker build -t freddieentity/java-maven:1.0 .'
+        sh 'docker images'
         sh "echo $PASSWORD | docker login -u $USERNAME --password-stdin"
         sh 'docker push freddieentity/java-maven:1.0'
     }
