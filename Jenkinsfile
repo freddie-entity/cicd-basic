@@ -7,7 +7,7 @@ pipeline {
             steps {
                 script {
                     gv = load "script.groovy"
-                    sh "Pipeline in branch $BRANCH_NAME"
+                    // sh "Pipeline in branch $BRANCH_NAME"
                 }
             }
         }
